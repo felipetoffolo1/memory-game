@@ -27,8 +27,11 @@ card.prototype.unturn = function () {
 
 }
 card.prototype.turn = function () {
+    // Recover the selected card object
     var cardSelected = cardsBuilded[this.id];
+    // Put it on the response array
     response.push(cardSelected);
+    // Unturn the choosen card
     var cardItem = document.getElementById(this.id);
     cardItem.classList.remove('unturned');
     if (response.length === 2) {

@@ -2,7 +2,9 @@
 .container {
     padding: 0 10px 10px 10px;
     margin: 0;
-    width: 640px;
+    width: 100%;
+    min-width: 170px;
+    max-width: 640px;
     list-style: none;
     display: -webkit-box;
     display: -moz-box;
