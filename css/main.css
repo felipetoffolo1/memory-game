@@ -1,0 +1,48 @@
+
+.container {
+    padding: 0 10px 10px 10px;
+    margin: 0;
+    width: 640px;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+    background: gray;
+}
+
+.card {
+    background: white;
+    width: 150px;
+    height: 150px;
+    line-height: 200px;
+    margin: 0;
+    margin-top: 10px ;
+    color: gray;
+    font-weight: bold;
+}
+
+.card i {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.card.unturned {
+    transform: rotateY(0);
+    background: black; 
+}
+.card.unturned i{
+    display: none;
+    
+}
+.card.hide {
+    background: gray;
+}
+.card.hide i {
+    display: none;
+}
