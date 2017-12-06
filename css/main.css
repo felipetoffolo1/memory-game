@@ -1,4 +1,3 @@
-
 .container {
     padding: 0 10px 10px 10px;
     margin: 0;
@@ -14,6 +13,8 @@
     -webkit-flex-flow: row wrap;
     justify-content: space-around;
     background: gray;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
 .card {
@@ -22,9 +23,11 @@
     height: 150px;
     line-height: 200px;
     margin: 0;
-    margin-top: 10px ;
+    margin-top: 10px;
     color: gray;
     font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
 .card i {
@@ -36,15 +39,26 @@
 
 .card.unturned {
     transform: rotateY(0);
-    background: black; 
+    background: #696969;
 }
-.card.unturned i{
+
+.card.unturned .card-icon {
     display: none;
-    
 }
+
+.card.unturned .back-icon {
+    display: inline-block;
+}
+
 .card.hide {
     background: gray;
 }
-.card.hide i {
+
+.card.hide .card-icon {
     display: none;
+}
+
+.card .back-icon {
+    display: none;
+    color: white;
 }
