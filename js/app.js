@@ -1,4 +1,6 @@
 
+// Shuffle array
+// Source: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 const shuffleArray = function (array) {
   for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -6,6 +8,7 @@ const shuffleArray = function (array) {
   }
 };
 // Format number to 2 digits
+// Source: https://stackoverflow.com/questions/8043026/javascript-format-number-to-have-2-digit
 const formatNumber = function (myNumber) {
   return ('0' + myNumber).slice(-2);
 };
