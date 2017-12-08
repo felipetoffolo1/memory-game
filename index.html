@@ -5,7 +5,9 @@
 <body>
     <h1>MEMORY GAME</h1>
     <div class="bar">
-        <div id="stars" class="bar-item"></div>
+        <div class="bar-item">
+            <p  id="stars" ></p>
+        </div>
         <div class="bar-item">
             <p id="timer">00:00</p>
         </div>
@@ -15,6 +17,11 @@
     </div>
     <div class="container" id="container">
 
+    </div>
+    <div id="result">
+        <h2>Congratulations</h2>
+        <i></i>
+        <button onclick="init()">Play again</button>
     </div>
 </body>
 <script src="js/card.js"></script>

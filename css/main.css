@@ -19,7 +19,8 @@
         transform: translate3d(4px, 0, 0);
     }
 }
-@keyframes stretch {
+
+@keyframes correct {
     0% {
         transform: scale(1.2);
     }
@@ -32,57 +33,80 @@
     100% {
         transform: scale(1);
     }
-
 }
+
 @keyframes rotate {
-0% {
-    transform:rotateY(-10deg);
+    0% {
+        transform: rotateY(-10deg);
     }
     25% {
-        transform:rotateY(-60deg);
+        transform: rotateY(-60deg);
     }
     50% {
-        transform:rotateY(-120deg);
+        transform: rotateY(-120deg);
     }
     100% {
-        transform:rotateY(-180deg);
+        transform: rotateY(-180deg);
     }
-
 }
+
 * {
     font-family: 'Bungee', cursive;
-    color: white;
-
+    color: #3fb0ac;
 }
 
 body {
-    background-color: #1F2833;
-      background: -webkit-linear-gradient(#1F2833, #C5C6C7); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#1F2833, #C5C6C7); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#1F2833, #C5C6C7); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#1F2833, #C5C6C7); /* Standard syntax */
+    background-color: #dddfd4;
+    border: 36px white solid;
+    padding-bottom: 16px;
+    background: -webkit-linear-gradient(#dddfd4, #3fb0ac);
+    background: -o-linear-gradient(#dddfd4, #3fb0ac);
+    background: -moz-linear-gradient(#dddfd4, #3fb0ac);
+    background: linear-gradient(#dddfd4, #3fb0ac);
 }
+
 h1 {
     text-align: center;
-    color: #66FCF1;
+    color: #173e43;
     font-size: 4em;
 }
+
+h2 {
+    text-align: center;
+    color: #fae596;
+    font-size: 3em;
+}
+
+p {
+    font-size: 2em;
+}
+
+#result {
+    display: none;
+    margin: auto;
+    text-align: center;
+}
+
 .bar {
     text-align: center;
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        margin: auto;
-        width: 80%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    margin: auto;
+    width: 80%;
 }
-.bar-item{
+
+.bar-item {
     width: 100%;
 }
+
 #stars {
-    padding: 16px;
+    /* padding: 16px; */
+    /* vertical-align: middle; */
 }
+
 .container {
     padding: 0 10px 10px 10px;
     margin: auto;
@@ -111,11 +135,10 @@ h1 {
     margin-top: 10px;
     font-weight: bold;
     transform: rotateY(0);
-    background: #1F2833;
+    background: #173e43;
     border-radius: 8px;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
-    color: #B1A296;
-    
+    color: #fae596;
 }
 
 .card i {
@@ -133,12 +156,12 @@ h1 {
 
 .card.open .card-icon {
     display: inline-block;
-
 }
 
 .card.open .back-icon {
     display: none;
 }
+
 
 /* .card.hide {
     background: gray;
@@ -150,22 +173,25 @@ h1 {
 
 .card .card-icon {
     display: none;
-    color: #45A29e;
-}
-.card .back-icon {
-    display: inline-block;
-    color: white;
+    color: #fae596;
 }
 
-.wrong {
+.card .back-icon {
+    display: inline-block;
+    color: #fae596;
+    /* font-size: px; */
+}
+
+card.wrong {
     animation-name: shake;
     animation-duration: 1s;
 }
-.right {
-    animation-name: stretch;
+
+.card.open.right {
+    animation-name: correct;
     animation-duration: 1s;
 }
 
-.star{
-    color: yellow;
+.star {
+    color: #fae596;
 }
