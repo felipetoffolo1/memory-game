@@ -1,17 +1,16 @@
 
-var shuffleArray = function (array) {
+const shuffleArray = function (array) {
   for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
 };
 // Format number to 2 digits
-var formatNumber = function (myNumber) {
+const formatNumber = function (myNumber) {
   return ('0' + myNumber).slice(-2);
 };
 
-var options = ['fa-superpowers', 'fa-thermometer-quarter', 'fa-bed', 'fa-cab', 'fa-bell-o', 'fa-flash', 'fa-flask', 'fa-gift'];
-// var options = ['fa-superpowers', 'fa-thermometer-quarter'];
+const options = ['fa-superpowers', 'fa-thermometer-quarter', 'fa-bed', 'fa-cab', 'fa-bell-o', 'fa-flash', 'fa-flask', 'fa-gift'];
 
 var cardsToBuild = options.slice();
 cardsToBuild = cardsToBuild.concat(options.slice());
@@ -55,10 +54,10 @@ var startTimer = function () {
   if (!startDate) {
     startDate = new Date().getTime();
     countDown = setInterval(function () {
-      var now = new Date().getTime();
-      var timeDiference = now - startDate;
-      var minutes = formatNumber(Math.floor((timeDiference % (1000 * 60 * 60)) / (1000 * 60)));
-      var seconds = formatNumber(Math.floor((timeDiference % (1000 * 60)) / 1000));
+      let now = new Date().getTime();
+      let timeDiference = now - startDate;
+      let minutes = formatNumber(Math.floor((timeDiference % (1000 * 60 * 60)) / (1000 * 60)));
+      let seconds = formatNumber(Math.floor((timeDiference % (1000 * 60)) / 1000));
       document.getElementById('timer').innerHTML = minutes + ':' + seconds;
     }, 1000);
   }
@@ -87,15 +86,15 @@ var newMove = function () {
 
 // Set the stars on the UI
 var updateStars = function () {
-  var starContainer = document.getElementById('stars');
+  let starContainer = document.getElementById('stars');
   starContainer.innerHTML = '';
   for (i = 0; i < stars; i++) {
-    var starIcon = document.createElement('I');
+    let starIcon = document.createElement('I');
     starIcon.classList.add('fa', 'fa-2x', 'star', 'fa-star');
     starContainer.appendChild(starIcon);
   }
   for (i = 0; i < (3 - stars); i++) {
-    var staroIcon = document.createElement('I');
+    let staroIcon = document.createElement('I');
     staroIcon.classList.add('fa', 'fa-2x', 'star', 'fa-star-o');
     starContainer.appendChild(staroIcon);
   }
@@ -138,14 +137,14 @@ var Card = function (icon) {
 
 // Function to createa new card on ui
 Card.prototype.create = function () {
-  var container = document.getElementById('container');
-  var cardItem = document.createElement('DIV');
+  let container = document.getElementById('container');
+  let cardItem = document.createElement('DIV');
   cardItem.classList.add('card');
   cardItem.id = this.id;
   cardItem.onclick = this.turn;
-  var cardIcon = document.createElement('I');
+  let cardIcon = document.createElement('I');
   cardIcon.classList.add(this.icon, 'fa', 'fa-5x', 'card-icon');
-  var backIcon = document.createElement('I');
+  let backIcon = document.createElement('I');
   backIcon.classList.add('fa-gg', 'fa', 'fa-2x', 'back-icon');
   cardItem.appendChild(cardIcon);
   cardItem.appendChild(backIcon);
@@ -153,7 +152,7 @@ Card.prototype.create = function () {
 };
 // Funciton when a card is wrong
 Card.prototype.wrong = function () {
-  var cardItem = document.getElementById(this.id);
+  let cardItem = document.getElementById(this.id);
   cardItem.classList.add('wrong');
   this.turned = false;
   setTimeout(function () {
@@ -163,7 +162,7 @@ Card.prototype.wrong = function () {
 };
 // Function when a card is right
 Card.prototype.correct = function () {
-  var cardItem = document.getElementById(this.id);
+  let cardItem = document.getElementById(this.id);
   cardItem.classList.add('right');
 };
 
@@ -177,7 +176,7 @@ Card.prototype.turn = function () {
   if (response.length !== 2 && !cardSelected.turned) {
     // Put it on the response array
     response.push(cardSelected);
-    var cardItem = document.getElementById(this.id);
+    let cardItem = document.getElementById(this.id);
     cardItem.classList.add('open');
     cardSelected.turned = true;
     if (response.length === 2) {
