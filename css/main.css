@@ -64,6 +64,7 @@ body {
     background: -moz-linear-gradient(#dddfd4, #3fb0ac);
     background: linear-gradient(#dddfd4, #3fb0ac);
 }
+/* Typography */
 
 h1 {
     text-align: center;
@@ -81,12 +82,8 @@ p {
     font-size: 2em;
 }
 
-#result {
-    display: none;
-    margin: auto;
-    text-align: center;
-}
 
+/* Info bar */
 .bar {
     text-align: center;
     display: -webkit-box;
@@ -101,12 +98,10 @@ p {
 .bar-item {
     width: 100%;
 }
-
-#stars {
-    /* padding: 16px; */
-    /* vertical-align: middle; */
+.star {
+    color: #fae596;
 }
-
+/* Cards container */
 .container {
     padding: 0 10px 10px 10px;
     margin: auto;
@@ -122,11 +117,11 @@ p {
     -webkit-flex-flow: row wrap;
     justify-content: space-around;
     background-color: WHITE;
-    /* background-color: #45a29e; */
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
+/* Card */
 .card {
     width: 150px;
     height: 150px;
@@ -162,15 +157,6 @@ p {
     display: none;
 }
 
-
-/* .card.hide {
-    background: gray;
-}
-
-.card.hide .card-icon {
-    display: ;
-} */
-
 .card .card-icon {
     display: none;
     color: #fae596;
@@ -179,7 +165,6 @@ p {
 .card .back-icon {
     display: inline-block;
     color: #fae596;
-    /* font-size: px; */
 }
 
 card.wrong {
@@ -192,6 +177,9 @@ card.wrong {
     animation-duration: 1s;
 }
 
-.star {
-    color: #fae596;
+
+#result {
+    display: none;
+    margin: auto;
+    text-align: center;
 }
