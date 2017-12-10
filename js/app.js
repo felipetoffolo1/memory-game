@@ -42,7 +42,7 @@ Game.prototype.init = function () {
 
   // Clean container
   document.getElementById('container').innerHTML = '';
-  document.getElementById('moves').innerHTML = this.moves + ' moves';
+  document.getElementById('moves').innerHTML = `${this.moves} moves`;
   document.getElementById('timer').innerHTML = '00:00';
   // construct ao the cards, create and add to a object
   for (var index in this.cardsToBuild) {
@@ -72,7 +72,7 @@ Game.prototype.startTimer = function () {
 /** called everytime move is made */
 Game.prototype.newMove = function () {
   this.moves++;
-  document.getElementById('moves').innerHTML = this.moves + ' moves';
+  document.getElementById('moves').innerHTML = `${this.moves} moves`;
   // Alter the number of star according to moves number
   switch (this.moves) {
     case 12:

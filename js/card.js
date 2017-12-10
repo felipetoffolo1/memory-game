@@ -12,7 +12,7 @@ var Card = function (icon) {
 /** Function to createa new card on ui */
 Card.prototype.create = function (game) {
   let container = document.getElementById('container');
-  let cardItem = document.createElement('DIV');
+  let cardItem = document.createElement('div');
   cardItem.classList.add('card');
   cardItem.id = this.id;
   cardItem.onclick = () => this.turn(game);
@@ -30,8 +30,7 @@ Card.prototype.wrong = function () {
   cardItem.classList.add('wrong');
   this.turned = false;
   setTimeout(function () {
-    cardItem.classList.remove('wrong');
-    cardItem.classList.remove('open');
+    cardItem.classList.remove('wrong', 'open');
   }, 1000);
 };
 /** Function when a card is right */

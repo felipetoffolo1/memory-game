@@ -57,26 +57,30 @@
 
 body {
     background-color: #dddfd4;
-    border: 36px white solid;
     padding-bottom: 16px;
     background: -webkit-linear-gradient(#dddfd4, #3fb0ac);
     background: -o-linear-gradient(#dddfd4, #3fb0ac);
     background: -moz-linear-gradient(#dddfd4, #3fb0ac);
     background: linear-gradient(#dddfd4, #3fb0ac);
     height: 100%;
+    border: 0;
 }
+
+
 /* Typography */
 
 h1 {
     text-align: center;
     color: #173e43;
-    font-size: 4em;
+    font-size: 3em;
+    line-height: 1em;
+
 }
 
 h2 {
     text-align: center;
     color: #fae596;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 p {
@@ -85,6 +89,7 @@ p {
 
 
 /* Info bar */
+
 .bar {
     text-align: center;
     display: -webkit-box;
@@ -96,21 +101,24 @@ p {
     margin: auto;
     width: 80%;
     justify-content: space-around;
-
 }
 
 .bar-item {
     /* width: 100%; */
     margin: 0 10px;
 }
+
 .bar-item p {
     margin: 0;
 }
+
 .star {
     color: #fae596;
 }
 
+
 /* Cards container */
+
 .container {
     padding: 0 10px 10px 10px;
     margin: auto;
@@ -129,10 +137,12 @@ p {
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
+
 /* Card */
+
 .card {
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
     margin: 0;
     margin-top: 10px;
     font-weight: bold;
@@ -147,7 +157,8 @@ p {
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    font-size: 2em;
 }
 
 .card.open {
@@ -184,51 +195,41 @@ card.wrong {
     animation-duration: 1s;
 }
 
-
 #result {
     display: none;
     margin: auto;
     text-align: center;
 }
 
-@media only screen and (max-width: 700px) {
-    body{
-        border: 0;
-
-    } 
-    .card {
-        width: 130px;
-        height: 130px;
-    }
-}
-@media only screen and (max-width: 560px) {
-    h2 {
-        font-size: 2em;
-    }
+@media (min-width: 480px) {
     .card {
         width: 110px;
         height: 110px;
     }
 }
 
-@media only screen and (max-width: 480px) {
- 
-    h1 {
-        font-size: 3em;
-    }
+@media (min-width: 560px) {
     .card {
-        width: 90px;
-        height: 90px;
+        width: 130px;
+        height: 130px;
     }
     .card i {
-        font-size: 2em;
+        font-size: 3em;
     }
 }
 
-@media only screen and (max-width: 400px) {
-
+@media (min-width: 760px) {
+    body {
+        border: 36px white solid;
+    }
     .card {
-        width: 80px;
-        height: 80px;
+        width: 150px;
+        height: 150px;
+    }
+    h1 {
+        font-size: 4em;
+    }
+    h2 {
+        font-size: 3em;
     }
 }
