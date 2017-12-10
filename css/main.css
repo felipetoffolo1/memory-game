@@ -63,6 +63,7 @@ body {
     background: -o-linear-gradient(#dddfd4, #3fb0ac);
     background: -moz-linear-gradient(#dddfd4, #3fb0ac);
     background: linear-gradient(#dddfd4, #3fb0ac);
+    height: 100%;
 }
 /* Typography */
 
@@ -113,7 +114,6 @@ p {
 .container {
     padding: 0 10px 10px 10px;
     margin: auto;
-    width: 100%;
     min-width: 170px;
     max-width: 640px;
     list-style: none;
@@ -202,6 +202,9 @@ card.wrong {
     }
 }
 @media only screen and (max-width: 560px) {
+    h2 {
+        font-size: 2em;
+    }
     .card {
         width: 110px;
         height: 110px;

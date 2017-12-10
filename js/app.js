@@ -17,11 +17,12 @@ const formatNumber = function (myNumber) {
 
 // Game constructor
 var Game = function (options = ['fa-superpowers', 'fa-thermometer-quarter', 'fa-bed', 'fa-cab', 'fa-bell-o', 'fa-flash', 'fa-flask', 'fa-gift']) {
+  this.optionsNumber = options.length;
   this.cardsToBuild = options.concat(options);
   this.cardsBuilded = {};
   this.response = [];
   this.moves = 0;
-  this.startDate = false;
+  this.startDate = new Date().getTime();
   this.stars = 3;
   this.rightAnswerNumber = 0;
   this.init();
@@ -34,6 +35,8 @@ Game.prototype.init = function () {
 
   // Clean container
   document.getElementById('container').innerHTML = '';
+  document.getElementById('moves').innerHTML = this.moves + ' moves';
+  document.getElementById('timer').innerHTML = '00:00';
   // construct ao the cards, create and add to a object
   for (var index in this.cardsToBuild) {
     var newCard = new Card(this.cardsToBuild[index]);
@@ -49,16 +52,14 @@ Game.prototype.init = function () {
 
 // Function to start the timer
 Game.prototype.startTimer = function () {
-  if (!this.startDate) {
-    this.startDate = new Date().getTime();
-    this.countDown = setInterval(() => {
-      let now = new Date().getTime();
-      let timeDiference = now - this.startDate;
-      let minutes = formatNumber(Math.floor((timeDiference % (1000 * 60 * 60)) / (1000 * 60)));
-      let seconds = formatNumber(Math.floor((timeDiference % (1000 * 60)) / 1000));
-      document.getElementById('timer').innerHTML = minutes + ':' + seconds;
-    }, 1000);
-  }
+  this.countDown = setInterval(() => {
+    let now = new Date().getTime();
+    let timeDiference = now - this.startDate;
+    console.log('here');
+    let minutes = formatNumber(Math.floor((timeDiference % (1000 * 60 * 60)) / (1000 * 60)));
+    let seconds = formatNumber(Math.floor((timeDiference % (1000 * 60)) / 1000));
+    document.getElementById('timer').innerHTML = minutes + ':' + seconds;
+  }, 1000);
 };
 
 // Function called everytime move is made
@@ -108,7 +109,7 @@ Game.prototype.rightAnswer = function (game) {
   // Clean responses
   this.response = [];
   // Check if the number of correct Answers is equal the number of options
-  if (this.rightAnswerNumber === game.options.length) {
+  if (this.rightAnswerNumber === game.optionsNumber) {
     // Show congrats msg
     document.getElementById('container').style = 'display:none';
     document.getElementById('result').style = 'display:block';
@@ -124,4 +125,7 @@ Game.prototype.wrongAnswer = function () {
   this.response = [];
 };
 
-var currentGame = new Game();
+var newGame = () => {
+  var currentGame = new Game();
+};
+newGame();
