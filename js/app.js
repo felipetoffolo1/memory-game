@@ -1,21 +1,28 @@
 
-// Shuffle array
-// Source: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+/**
+* @description Shuffle array Source: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+* @param {array} array - A array to be shuffled
+*/
 const shuffleArray = function (array) {
   for (let currentIndex = array.length - 1; currentIndex > 0; currentIndex--) {
     let newIndex = Math.floor(Math.random() * (currentIndex + 1));
     [array[currentIndex], array[newIndex]] = [array[newIndex], array[currentIndex]];
   }
 };
-// Format number to 2 digits
-// Source: https://stackoverflow.com/questions/8043026/javascript-format-number-to-have-2-digit
+/**
+* @description Format number to 2 digits
+* @param {number} myNumber
+* @returns {number} with 2 digits
+*/
 const formatNumber = function (myNumber) {
   return ('0' + myNumber).slice(-2);
 };
 
-//  GAme
-
-// Game constructor
+/**
+* @description Represents a game
+* @constructor
+* @param {array} options - A array of icon options to use in the game
+*/
 var Game = function (options = ['fa-superpowers', 'fa-thermometer-quarter', 'fa-bed', 'fa-cab', 'fa-bell-o', 'fa-flash', 'fa-flask', 'fa-gift']) {
   this.optionsNumber = options.length;
   this.cardsToBuild = options.concat(options);
@@ -28,7 +35,7 @@ var Game = function (options = ['fa-superpowers', 'fa-thermometer-quarter', 'fa-
   this.init();
 };
 
-// Init the game
+/** Init the game */
 Game.prototype.init = function () {
   // shuffle the cards
   shuffleArray(this.cardsToBuild);
@@ -50,7 +57,7 @@ Game.prototype.init = function () {
   document.getElementById('result').style = 'display:none';
 };
 
-// Function to start the timer
+/** start the timer */
 Game.prototype.startTimer = function () {
   this.countDown = setInterval(() => {
     let now = new Date().getTime();
@@ -62,7 +69,7 @@ Game.prototype.startTimer = function () {
   }, 1000);
 };
 
-// Function called everytime move is made
+/** called everytime move is made */
 Game.prototype.newMove = function () {
   this.moves++;
   document.getElementById('moves').innerHTML = this.moves + ' moves';
@@ -83,7 +90,7 @@ Game.prototype.newMove = function () {
   this.updateStars();
 };
 
-// Set the stars on the UI
+/** Set the stars on the UI */
 Game.prototype.updateStars = function () {
   let starContainer = document.getElementById('stars');
   starContainer.innerHTML = '';
@@ -99,7 +106,7 @@ Game.prototype.updateStars = function () {
   }
 };
 
-// Function called when a right answer is given
+/**  Function called when a right answer is  */
 Game.prototype.rightAnswer = function (game) {
   // Add the number of right answers
   this.rightAnswerNumber++;
@@ -118,7 +125,7 @@ Game.prototype.rightAnswer = function (game) {
   }
 };
 
-// Function called when a wrong answer is given
+/** Function called when a wrong answer is given */
 Game.prototype.wrongAnswer = function () {
   this.response[0].wrong();
   this.response[1].wrong();

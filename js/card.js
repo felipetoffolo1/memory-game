@@ -1,13 +1,15 @@
-// Card
-
-// Card constructor
+/**
+* @description Represents a card
+* @constructor
+* @param {string} icon - Icon used on the card
+*/
 var Card = function (icon) {
   this.id = Math.random();
   this.icon = icon;
   this.turned = false;
 };
 
-// Function to createa new card on ui
+/** Function to createa new card on ui */
 Card.prototype.create = function (game) {
   let container = document.getElementById('container');
   let cardItem = document.createElement('DIV');
@@ -22,7 +24,7 @@ Card.prototype.create = function (game) {
   cardItem.appendChild(backIcon);
   container.appendChild(cardItem);
 };
-// Funciton when a card is wrong
+/** Funciton when a card is wrong */
 Card.prototype.wrong = function () {
   let cardItem = document.getElementById(this.id);
   cardItem.classList.add('wrong');
@@ -32,13 +34,13 @@ Card.prototype.wrong = function () {
     cardItem.classList.remove('open');
   }, 1000);
 };
-// Function when a card is right
+/** Function when a card is right */
 Card.prototype.correct = function () {
   let cardItem = document.getElementById(this.id);
   cardItem.classList.add('right');
 };
 
-// Function when a card is turned
+/** Function when a card is turned */
 Card.prototype.turn = function (game) {
   // Recover the selected card object
   var cardSelected = game.cardsBuilded[this.id];
