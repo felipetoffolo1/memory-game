@@ -1,8 +1,11 @@
 # Awesome Memory Game
 This is a classic memory game, the idea is just too have **fun** and use some **JS**.
-It is all made with only html, js e css. No ** js third-party libs**
+It is all made with only html, js e css. No **js third-party libs**
+
+Play it (here!!)[https://felipetoffolo1.github.io/memory-game/]
 
 ## How it works!
+This game is made using ´OOP´ (Object-oriented Programing) Javascript.
 ### Classes
 Basically the game has to main classes **Game** and **Card**
 #### Game
